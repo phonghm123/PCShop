@@ -1,4 +1,2 @@
-Nhập file SQL 
-Quan lý cua em thầy vào admincp ạ
-tai khoan :trang
+tai khoan :phong
 matkhau :1 
