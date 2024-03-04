@@ -1,20 +1,26 @@
- <p>Thêm danh mục sản phẩm</p>
- <table border="1" width="50%" style="border-collapse: collapse;">
-   <form method="POST" action="modules/quanlydanhmucsp/xuly.php">
-    <tr>
-        <th colspan="2">Điền danh mục sản phẩm</th>
-    </tr>
-    <tr>
-        <td>Tên danh mục</td>
-        <td><input type="text" name="tendanhmuc" ></td>
-    </tr>
-    <tr>
-        <td>Thứ tự</td>
-        <td><input type="text" name="thutu"></td>
-    </tr>
-    <tr>
+ 
+ <html>
 
-        <td colspan="2"><input type="submit" value="Thêm danh mục sản phẩm" name="themdanhmuc"></td>
-    </tr>
+<head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+</head>
+
+<body>
+<div class="container" style="margin-bottom:50px; font-family: 'Times New Roman', Times, serif; font-size:18px">
+        <h1 style="text-align:center;font-family: 'Times New Roman', Times, serif; ">Trang quản trị danh mục sản phẩm</h1>
+        <div class="row">
+   <form method="POST" action="modules/quanlydanhmucsp/xuly.php">
+    Nhập vào tên danh mục:
+        <input class="form-control" type="text" name="tendanhmuc" id="">
+        <br>
+    Nhập tứ tự:
+        <input class="form-control" type="text" name="thutu" id="">
+        <br>
+
+        <input class="btn btn-primary" type="submit" value="Thêm danh mục sản phẩm" name="themdanhmuc">
+    
 </form>
- </table>
+</body>
+ </html>

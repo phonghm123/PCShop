@@ -46,26 +46,26 @@
                             <input type="radio" name="radio_btn" id="radio3">
                             <input type="radio" name="radio_btn" id="radio4">
                             <div class="silde first">
-                                <img src="images/1.jpg" alt="">
+                                <img src="images/slide1.jpg" alt="">
                             </div>
                             <div class="silde">
-                                <img src="images/2.jpg" alt="">
+                                <img src="images/slide2.jpg" alt="">
                             </div>
                             <div class="silde">
-                                <img src="images/3.jpg" alt="">
+                                <img src="images/slide3.jpg" alt="">
                             </div>
                             <div class="silde">
-                                <img src="images/4.jpg" alt="">
+                                <img src="images/slide4.jpg" alt="">
                             </div>
 
 
-                            <div class="navigation-auto">
+                            <!-- <div class="navigation-auto">
                                 <div class="auto-btn1"></div>
                                 <div class="auto-btn2"></div>
                                 <div class="auto-btn3"></div>
                                 <div class="auto-btn4"></div>
 
-                            </div>
+                            </div> -->
 
                         
                         </div>

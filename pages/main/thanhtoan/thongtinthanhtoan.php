@@ -1,4 +1,14 @@
-<p>Thông tin thanh toán</p>
+<html>
+    <head>
+		<style>
+			.vien{
+				border: 2px solid black;
+			}
+		</style>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+    <body>
  <div class="container">
  <?php
     if(isset($_SESSION['id_khachhang'])){
@@ -15,15 +25,16 @@
   	<form action="thanhtoan.php" method="POST">
 	<div class="row">
   		<h5>Giỏ hàng của bạn</h5>
-  	<table style="width:100%; text-align: center; border-collapse: collapse;" border="1">
+  	<table class="table table-striped" style="width:100%; border: 2px solid black;text-align: center;">
+	<div>
 		<tr>
-        <th>ID</th>
-        <th>Mã :</th>
-        <th>Tên</th>
-        <th>Hình</th>
-        <th>Số lượng</th>
-        <th>Giá :</th>
-        <th>Thành tiền</th>   
+        <th class="vien">ID</th>
+        <th class="vien">Mã :</th>
+        <th class="vien">Tên</th>
+        <th class="vien">Hình</th>
+        <th class="vien">Số lượng</th>
+        <th class="vien">Giá :</th>
+        <th class="vien">Thành tiền</th>   
 		</tr>
     <?php
         if(isset($_SESSION['cart'])){
@@ -35,21 +46,18 @@
                 $i++;
     ?>
         <tr>
-            <td><?php echo $i ?></td>
+            <td class="vien"><?php echo $i ?></td>
             <!-- ở đây lấy dữ liêu cart_item['masp'] từ themgiohang.php -->
-            <td><?php echo $cart_item['masp']?></td>
-            <td><?php echo $cart_item['tensanpham'] ?></td>
-            <td><img src="../../../admincp/modules/quanlysp/uploads/<?php echo $cart_item['hinhanh'] ?>" width="150px"></td>
+            <td class="vien"><?php echo $cart_item['masp']?></td>
+            <td class="vien"><?php echo $cart_item['tensanpham'] ?></td>
+            <td class="vien"><img src="../../../admincp/modules/quanlysp/uploads/<?php echo $cart_item['hinhanh'] ?>" width="150px"></td>
 
-            <td>
-                <a href="pages/main/giohang/suasoluong.php?cong=<?php echo $cart_item['id'] ?>"><i class="fa-solid fa-plus"></i></a>
+            <td class="vien">
                 <?php echo $cart_item['soluong'] ?>
-                <a href="pages/main/giohang/suasoluong.php?tru=<?php echo $cart_item['id'] ?>"><i class="fa-solid fa-minus"></i></a>
             </td>
 
-            <td><?php echo number_format($cart_item['giasanpham'],0,',','.') . ' VNĐ'?></td>
-            <td><?php  echo number_format($thanhtien,0,',','.') . ' VNĐ' ?></td>
-            <td><a href="pages/main/giohang/xoasanpham.php?xoa=<?php echo $cart_item['id'] ?>" class="btn btn-success">XÓA</a></td>
+            <td class="vien"><?php echo number_format($cart_item['giasanpham'],0,',','.') . ' VNĐ'?></td>
+            <td class="vien"><?php  echo number_format($thanhtien,0,',','.') . ' VNĐ' ?></td>
         </tr>
 
 
@@ -60,7 +68,6 @@
         <tr>
             <td colspan="8">
                 <p style="float: left text-align: center;" class="btn btn-success"> Tổng tiền : <?php echo number_format($tongtien,0,',','.') . ' VNĐ'  ?></p>
-                <p style="float: right;"><a href="pages/main/giohang/xoahetgiohang.php?xoatatca=xoahet" class="btn btn-success">Xóa Hêt</a></p>
                 <div style="clear:both;"> </div>
 		    </td>
 		  </tr>
@@ -88,7 +95,7 @@
   		<div class="form-check">
 		  <input class="form-check-input" type="radio" name="payment" id="exampleRadios1" value="Tiền Mặt" checked>
 		  <label class="form-check-label" for="exampleRadios1">
-		    Tiền mặt
+		    Tiền mặt(COD)
 		  </label>
 		</div>
 		<div class="form-check">

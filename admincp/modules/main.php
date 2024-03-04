@@ -1,5 +1,6 @@
 <div class="clear"></div>
 <div class="main">
+   
 <?php 
                         
                         if(isset($_GET['action']) && $_GET['query']){                        
@@ -37,9 +38,13 @@
                             
                         }elseif($bientam=='quanlydonhang' && $query=='xemdonhang'){
                             include("modules/quanlydonhang/xemdonhang.php");
+                        }
+                        // elseif($bientam=='thongke'&& $query=='thongke'){
+                        //         include "modules/thongke.php";
+                        //     }
                             
-                        }elseif($bientam=='dangxuat'){
-                            include("../login.php");
+                        elseif($bientam=='dangxuat'){
+                            include("../../index.php");
                         }
                         else{
                             include("modules/dashboard.php");

@@ -18,12 +18,12 @@
 
                         }elseif($bientam=='thanhtoan'){
                             include("thanhtoan.php");
-
+                                
                         }
                         elseif($bientam=='donhangdadat'){
                             include("donhangdadat.php");
                         }else{
-                           echo "Cảm ơn bạn đã đặt hàng";
+                            echo ("Thanh toán thành công!");
                            
                         }
                     ?>

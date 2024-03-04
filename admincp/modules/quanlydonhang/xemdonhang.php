@@ -1,4 +1,4 @@
- <p>Xem đơn hàng</p>
+<p>Xem đơn hàng</p>
  <?php
     $code=$_GET['code'];
     $sql_lietke_dh="SELECT * FROM tbl_cart_detail ,tbl_sanpham  WHERE tbl_cart_detail.id_sanpham=tbl_sanpham.id_sanpham 
@@ -7,15 +7,15 @@
     $result_lietke_dh= mysqli_query($connect,$sql_lietke_dh);
 ?>
 <p>Liệt kê danh mục sản phẩm</p>
- <table style="width: 100%;" border="1" style="border-collapse:collapse;"> 
+ <table style="width: 100%;" style="border-collapse:collapse;"> 
      <tr>
-         <td>ID</td>
-         <td>Mã đơn hàng</td>
-         <td>Tên Sản phẩm</td>
-         <td>Hình </td>
-         <td>Số lượng</td>
-         <td>Đơn giá</td>
-         <td>Thành tiền</td>
+         <td style="border: 2px solid black;">ID</td>
+         <td style="border: 2px solid black;">Mã đơn hàng</td>
+         <td style="border: 2px solid black;">Tên Sản phẩm</td>
+         <td style="border: 2px solid black;">Hình </td>
+         <td style="border: 2px solid black;">Số lượng</td>
+         <td style="border: 2px solid black;">Đơn giá</td>
+         <td style="border: 2px solid black;">Thành tiền</td>
          
      </tr>
      <?php
@@ -27,22 +27,22 @@
         $tongtien+=$thanhtien;
      ?>
      <tr>
-         <td><?php echo $i ?></td>
-         <td><?php echo $row['code_cart'] ?></td>
-         <td><?php echo $row['tensanpham']?></td>
-         <td style="width:150px;height:150px;" >
+         <td style="border: 2px solid black;"><?php echo $i ?></td>
+         <td style="border: 2px solid black;"><?php echo $row['code_cart'] ?></td>
+         <td style="border: 2px solid black;"><?php echo $row['tensanpham']?></td>
+         <td style="width:150px;height:150px; border: 2px solid black;" >
                             <img src="modules/quanlysp/uploads/<?php echo $row['hinhanh'] ?> " width="100%" >   
          </td>
-         <td><?php echo $row['soluongmua']?></td>
-         <td><?php echo number_format($row['giasanpham'],0,',','.').'VNĐ' ?></td>
-         <td><?php echo number_format($thanhtien,0,',','.').'VNĐ' ?></td>
+         <td style="border: 2px solid black;"><?php echo $row['soluongmua']?></td>
+         <td style="border: 2px solid black;"><?php echo number_format($row['giasanpham'],0,',','.').'VNĐ' ?></td>
+         <td style="border: 2px solid black;"><?php echo number_format($thanhtien,0,',','.').'VNĐ' ?></td>
          
      </tr>
      <?php
     }
     ?>
      <tr>
-         <th colspan="7">Tổng tiền : <?php echo number_format($tongtien,0,',','.').'VNĐ' ?></th>
+         <th class="btn btn-success"colspan="7">Tổng tiền : <?php echo number_format($tongtien,0,',','.').'VNĐ' ?></th>
          
      </tr>
      <tr>

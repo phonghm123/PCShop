@@ -4,7 +4,7 @@
  while ($row_chitiet = mysqli_fetch_array($query_chitiet)) {
  ?>
 <div class="warpper_deital" style="display: flex;">
-   <div class="hinhanh_sanpham" style="width: 40%; height: 40%;">
+   <div class="hinhanh_sanpham" style="width: 40%; height: 40%; margin-right: 20px">
       <h1 align="left">Chi tiết sản phẩm </h1>
       <img src="admincp/modules/quanlysp/uploads/<?php echo $row_chitiet['hinhanh'] ?>">
    </div>
@@ -21,19 +21,21 @@
             <?php echo number_format($row_chitiet['giasanpham'], 0, ',', '.') . 'vnd' ?>
          </p>
          <p>Số lượng:
-         <?php echo $row_chitiet['soluong'] ?>
-      </p>
+                <?php
+                    if($row_chitiet['soluong'] > 0) {
+                        echo $row_chitiet['soluong'];
+                    } else {
+                        echo "Hết hàng";
+                    }
+                ?>
+            </p>
       <p>Danh mục :
          <?php echo $row_chitiet['tendanhmuc'] ?>
       </p>
      
          <p><input class="themgiohang" type="submit" name="themgiohang" value="Thêm Giỏ Hàng"></p>
       </div>
-   </form>
-  
-     
-</div>
-<details>
+      <details>
  <p>Tóm tắt :
          <?php echo $row_chitiet['tomtat'] ?>
       </p>
@@ -41,6 +43,11 @@
          <?php echo $row_chitiet['noidung'] ?>
       </p>
  </details>
+   </form>
+  
+     
+</div>
+
 <?php
  }
  ?>

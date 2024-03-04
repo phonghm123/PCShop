@@ -2,8 +2,8 @@
     $sql_sua_sp="SELECT * FROM tbl_sanpham WHERE id_sanpham='$_GET[idsanpham]' LIMIT 1";
     $result_sua_sp= mysqli_query($connect,$sql_sua_sp);
 ?>
- <p>Thêm danh mục sản phẩm</p>
- <table border="1" width="50%" style="border-collapse: collapse;">
+ <h1 style="font-family: 'Times New Roman', Times, serif; text-align: center;">Sửa sản phẩm</h1>
+ <table border="1" width="50%" style="border-collapse: collapse;font-family: 'Times New Roman', Times, serif;">
     <form method="POST" action="modules/quanlysp/xuly.php?idsanpham=<?php echo $_GET['idsanpham']?>" enctype="multipart/form-data">
  <?php
     while($row =mysqli_fetch_array($result_sua_sp)){
@@ -90,7 +90,7 @@
     </tr>
     <tr>
 
-        <td colspan="2"><input type="submit" value="Sửa sản phẩm" name="suasanpham"></td>
+        <td colspan="2"><input class="btn btn-primary" type="submit" value="Sửa sản phẩm" name="suasanpham"></td>
     </tr>
 </form>
 <?php

@@ -49,7 +49,7 @@
                
                 <li> 
                     <Form method="POST" action="index.php?quanly=timkiem"> 
-                        <input type="text" placeholder="sreach....." name="tukhoa">
+                        <input type="text" placeholder="search....." name="tukhoa">
                         <input type="submit" name="timkiem" value="Tìm Kiếm">
                     </Form>
                 </li>

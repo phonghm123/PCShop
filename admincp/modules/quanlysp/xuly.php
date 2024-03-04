@@ -32,7 +32,7 @@
                 VALUE ('".$tensanpham."','".$masanpham."','".$giasanpham."','".$soluong."','".$hinhanh."','".$tomtat."','".$noidung."',".$hienthi.",'".$danhmuc."')";
                 mysqli_query($connect,$sql_themsp);
                 header('Location:../../index.php?action=quanlysanpham&query=them');
-        
+                 
             }else{
                 $hinhanh='';
                 header('Location:../../index.php?action=quanlysanpham&query=them');

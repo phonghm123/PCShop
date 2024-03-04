@@ -1,4 +1,9 @@
-<p>Thông tin vận chuyển</p>
+<html>
+    <head>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+    <body>
 <div class="container">
         <div class="arrow-steps clearfix">
             <div class="step "> <span> <a href="../../../index.php?quanly=giohang" >Giỏ hàng</a></span> </div>
@@ -30,7 +35,7 @@
  	}
  	?>
  		
-<div class="col-md-8">
+<div class="col-md-12">
   		
   		<ul>
   			<li>Họ và tên vận chuyển : <b><?php echo $name ?></b></li>
@@ -40,16 +45,15 @@
   		</ul>
 <h4>Nếu bạn muốn đổi địa chỉ tài khoản hãy liên hệ shop ở phần Contact nhé</h4>
 	<!--GIO HANG---->
-    <table style="width:100%;text-align: center;border-collapse: collapse;" border="1">
+    <table style="width:100%;text-align: center;border-collapse: collapse;" border="2">
         <tr>
-            <th>ID</th>
-            <th>Mã :</th>
-            <th>Tên</th>
-            <th>Hình</th>
-            <th>Số lượng</th>
-            <th>Giá :</th>
-            <th>Thành tiền</th>
-            <th></th>
+            <th style="border: 2px solid black;">ID</th>
+            <th style="border: 2px solid black;">Mã :</th>
+            <th style="border: 2px solid black;">Tên</th>
+            <th style="border: 2px solid black;">Hình</th>
+            <th style="border: 2px solid black;">Số lượng</th>
+            <th style="border: 2px solid black;">Giá :</th>
+            <th style="border: 2px solid black;">Thành tiền</th>
         </tr>
     <?php
         if(isset($_SESSION['cart'])){
@@ -61,18 +65,15 @@
                 $i++;
     ?>
         <tr>
-            <td><?php echo $i ?></td>
-            <td><?php echo $cart_item['masp']?></td>
-            <td><?php echo $cart_item['tensanpham'] ?></td>
-            <td><img src="../../../admincp/modules/quanlysp/uploads/<?php echo $cart_item['hinhanh'] ?>" width="150px"></td>
-            <td>
-                <a href="pages/main/giohang/suasoluong.php?cong=<?php echo $cart_item['id'] ?>"><i class="fa-solid fa-plus"></i></a>
+            <td style="border: 2px solid black;"><?php echo $i ?></td>
+            <td style="border: 2px solid black;"><?php echo $cart_item['masp']?></td>
+            <td style="border: 2px solid black;"><?php echo $cart_item['tensanpham'] ?></td>
+            <td style="border: 2px solid black;"><img src="../../../admincp/modules/quanlysp/uploads/<?php echo $cart_item['hinhanh'] ?>" width="150px"></td>
+            <td style="border: 2px solid black;">
                 <?php echo $cart_item['soluong'] ?>
-                <a href="pages/main/giohang/suasoluong.php?tru=<?php echo $cart_item['id'] ?>"><i class="fa-solid fa-minus"></i></a>
             </td>
-            <td><?php echo number_format($cart_item['giasanpham'],0,',','.') . ' VNĐ'?></td>
-            <td><?php  echo number_format($thanhtien,0,',','.') . ' VNĐ' ?></td>
-            <td><a href="pages/main/giohang/xoasanpham.php?xoa=<?php echo $cart_item['id'] ?>" class="btn btn-success">XÓA</a></td>
+            <td style="border: 2px solid black;"><?php echo number_format($cart_item['giasanpham'],0,',','.') . ' VNĐ'?></td>
+            <td style="border: 2px solid black;"><?php  echo number_format($thanhtien,0,',','.') . ' VNĐ' ?></td>
         </tr>
 
     <?php 
@@ -81,20 +82,19 @@
 
         <tr>
             <td colspan="8">
-                <p style="float: left;"> Tổng tiền : <?php echo number_format($tongtien,0,',','.') . ' VNĐ'  ?></p>
-                <p style="float: right;"><a href="pages/main/giohang/xoahetgiohang.php?xoatatca=xoahet" class="btn btn-success">Xóa Hêt</a></p>
+                <p class="btn btn-success" style="float: left;"> Tổng tiền : <?php echo number_format($tongtien,0,',','.') . ' VNĐ'  ?></p>
                 <div style="clear: both;"> </div>
 
                     <?php
                             if(isset($_SESSION['dangky'])){
                                 
                     ?>
-                            <p><a href="index.php?quanly=thongtinthanhtoan" class="btn btn-success">Hình thức thanh toán</a></p>
+                            <p><a href="index.php?quanly=thongtinthanhtoan" class="btn btn-dark">Hình thức thanh toán</a></p>
                     <?php
                     }else{
                     
                     ?>
-                         <p><a href="index.php?quanly=dangky">Đăng kí đặt hàng</a></p>
+                         <p><a class="btn btn-primary" href="index.php?quanly=dangky">Đăng kí đặt hàng</a></p>
                     <?php
                      }
                     ?>     
@@ -104,7 +104,7 @@
         }else{ 
     ?>
         <tr>
-            <td colspan="6">Hiện tại giỏ hàng trông</td>
+            <td colspan="6">Hiện tại giỏ hàng trống</td>
         </tr>
     <?php
         }
@@ -112,3 +112,5 @@
     </table>
 </div>
 </div>
+    </body>
+</html>

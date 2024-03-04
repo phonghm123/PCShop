@@ -34,10 +34,10 @@
 
 	<div class="footer" style="display: flex; width: 100%; height: 20%;">
 		<div class="image">
-			<img src="images/logo.png" alt="">
+			<img src="images/logo1.jpg" alt="">
 			<ul>
 				<h2>
-					Phong GAME
+					Phong 88
 				</h2>
 			</ul>
 		</div>
